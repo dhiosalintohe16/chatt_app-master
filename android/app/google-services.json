@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "project_number": "360826353341",
+    "project_id": "tierra-b42c8",
+    "storage_bucket": "tierra-b42c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360826353341:android:b0ce06683108a885c969d4",
+        "android_client_info": {
+          "package_name": "com.victoria.tierra_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360826353341-pua6j1s9f9g47av9pmc5ghg3ubt4thso.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victoria.tierra_app",
+            "certificate_hash": "ab6917d432d8918de815c3ad122a06257e30a562"
+          }
+        },
+        {
+          "client_id": "360826353341-v6clhd298acekg7mam5ldr7dkebu1dl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victoria.tierra_app",
+            "certificate_hash": "153838c1a88ded65d568910a2648df5fa2a10084"
+          }
+        },
+        {
+          "client_id": "360826353341-8psqorm03bb87c3s9mu92elgl9rsi7lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHxAW3abGYWucCZSuMNDqcXl2ruEB37Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360826353341-8psqorm03bb87c3s9mu92elgl9rsi7lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360826353341:android:e6998431a9741349c969d4",
+        "android_client_info": {
+          "package_name": "com.victoria.tierrapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360826353341-5l1ueldnkeofl4b91aot1fjdfrdt3irt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victoria.tierrapp",
+            "certificate_hash": "153838c1a88ded65d568910a2648df5fa2a10084"
+          }
+        },
+        {
+          "client_id": "360826353341-teiu63pi5p8dfvf5qknm3fdms5s8opru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victoria.tierrapp",
+            "certificate_hash": "26d6c4608c0fc5ba863e969a1fe728196ec0253e"
+          }
+        },
+        {
+          "client_id": "360826353341-v5nnujv7b7ei5fpsapkk6q4ttg9b4a0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victoria.tierrapp",
+            "certificate_hash": "ab6917d432d8918de815c3ad122a06257e30a562"
+          }
+        },
+        {
+          "client_id": "360826353341-8psqorm03bb87c3s9mu92elgl9rsi7lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHxAW3abGYWucCZSuMNDqcXl2ruEB37Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360826353341-8psqorm03bb87c3s9mu92elgl9rsi7lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
