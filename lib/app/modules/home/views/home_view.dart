@@ -19,24 +19,14 @@ class HomeView extends GetView<HomeController> {
       ),
 
       body: Center(
-        child: Column( children: [
+        child: 
           Text(
             'HomeView is working',
             style: TextStyle(fontSize: 20),
 
-          ),
-          FloatingActionButton(
-          elevation: 0,
-            onPressed: (){},
-            child: Icon(Icons.add_comment),
-            backgroundColor: Color(0xFF008269)),
-            ]
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add_a_photo),
-      ),
+          ),)
+         
+     
     );
   }
 }

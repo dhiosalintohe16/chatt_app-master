@@ -233,7 +233,8 @@ class AuthController extends GetxController {
     //Update Firebase
     CollectionReference users = firestore.collection('users');
 
-    users.doc(currentUser!.email).update({
+    users.doc(currentUser!.email).
+    update({
       "name": name,
       "lastSignInTime":
           userCredential!.user!.metadata.lastSignInTime!.toIso8601String(),

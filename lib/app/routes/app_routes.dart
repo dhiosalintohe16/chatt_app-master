@@ -19,6 +19,7 @@ abstract class Routes {
   static const ALAMAT_PENGIRIMAN = _Paths.ALAMAT_PENGIRIMAN;
   static const CHAT_ROOM = _Paths.CHAT_ROOM;
   static const PERTANYAAN = _Paths.PERTANYAAN;
+  static const COMUNITY = _Paths.COMUNITY;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const ALAMAT_PENGIRIMAN = '/alamat-pengiriman';
   static const CHAT_ROOM = '/chat-room';
   static const PERTANYAAN = '/pertanyaan';
+  static const COMUNITY = '/comunity';
 }

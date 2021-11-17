@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:tierra_app/app/modules/artikel/views/artikel_view.dart';
+import 'package:tierra_app/app/modules/comunity/views/comunity_view.dart';
 import 'package:tierra_app/app/modules/favorit/views/favorit_view.dart';
 import 'package:tierra_app/app/modules/home/views/home_view.dart';
 import 'package:tierra_app/app/modules/komunitas/views/komunitas_view.dart';
+import 'package:tierra_app/app/modules/pertanyaan/views/pertanyaan_view.dart';
 import 'package:tierra_app/app/modules/profil/views/profil_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:tierra_app/app/utils/theme.dart';
@@ -23,8 +25,10 @@ class _BottomNavBarrState extends State<BottomNavBarView> {
     HomeView(),
     ArtikelView(),
     FavoritView(),
+    // ComunityView(),
     KomunitasView(),
     ProfilView(),
+    PertanyaanView(),
   ];
 
   @override

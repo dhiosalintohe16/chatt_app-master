@@ -10,6 +10,8 @@ import 'package:tierra_app/app/modules/bottom_nav_bar/bindings/bottom_nav_bar_bi
 import 'package:tierra_app/app/modules/bottom_nav_bar/views/bottom_nav_bar_view.dart';
 import 'package:tierra_app/app/modules/chat_room/bindings/chat_room_binding.dart';
 import 'package:tierra_app/app/modules/chat_room/views/chat_room_view.dart';
+import 'package:tierra_app/app/modules/comunity/bindings/comunity_binding.dart';
+import 'package:tierra_app/app/modules/comunity/views/comunity_view.dart';
 import 'package:tierra_app/app/modules/detail_saya/bindings/detail_saya_binding.dart';
 import 'package:tierra_app/app/modules/detail_saya/views/detail_saya_view.dart';
 import 'package:tierra_app/app/modules/favorit/bindings/favorit_binding.dart';
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.PERTANYAAN,
       page: () => PertanyaanView(),
       binding: PertanyaanBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMUNITY,
+      page: () => ComunityView(),
+      binding: ComunityBinding(),
     ),
   ];
 }

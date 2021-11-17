@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
         
         // return  GetMaterialApp(
-        //   initialRoute: Routes.KOMUNITAS,
+        //   initialRoute: Routes.COMUNITY,
         //   getPages:AppPages.routes,
         // );
 
