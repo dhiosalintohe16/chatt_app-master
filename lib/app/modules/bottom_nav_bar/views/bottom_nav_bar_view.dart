@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:tierra_app/app/modules/artikel/views/artikel_view.dart';
-import 'package:tierra_app/app/modules/comunity/views/comunity_view.dart';
+
 import 'package:tierra_app/app/modules/favorit/views/favorit_view.dart';
 import 'package:tierra_app/app/modules/home/views/home_view.dart';
 import 'package:tierra_app/app/modules/komunitas/views/komunitas_view.dart';
