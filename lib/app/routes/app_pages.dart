@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+
 import 'package:tierra_app/app/modules/alamat_pengiriman/bindings/alamat_pengiriman_binding.dart';
 import 'package:tierra_app/app/modules/alamat_pengiriman/views/alamat_pengiriman_view.dart';
 import 'package:tierra_app/app/modules/artikel/bindings/artikel_binding.dart';
@@ -10,7 +11,6 @@ import 'package:tierra_app/app/modules/bottom_nav_bar/bindings/bottom_nav_bar_bi
 import 'package:tierra_app/app/modules/bottom_nav_bar/views/bottom_nav_bar_view.dart';
 import 'package:tierra_app/app/modules/chat_room/bindings/chat_room_binding.dart';
 import 'package:tierra_app/app/modules/chat_room/views/chat_room_view.dart';
-
 import 'package:tierra_app/app/modules/detail_saya/bindings/detail_saya_binding.dart';
 import 'package:tierra_app/app/modules/detail_saya/views/detail_saya_view.dart';
 import 'package:tierra_app/app/modules/favorit/bindings/favorit_binding.dart';
@@ -29,6 +29,7 @@ import 'package:tierra_app/app/modules/profil/bindings/profil_binding.dart';
 import 'package:tierra_app/app/modules/profil/views/profil_view.dart';
 import 'package:tierra_app/app/modules/tentang/bindings/tentang_binding.dart';
 import 'package:tierra_app/app/modules/tentang/views/tentang_view.dart';
+
 
 part 'app_routes.dart';
 
@@ -108,6 +109,7 @@ class AppPages {
       page: () => PertanyaanView(),
       binding: PertanyaanBinding(),
     ),
-   
+    
+    
   ];
 }

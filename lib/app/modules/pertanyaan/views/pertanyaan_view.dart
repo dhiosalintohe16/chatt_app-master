@@ -58,7 +58,7 @@ class PertanyaanView extends GetView<PertanyaanController> {
                   width: double.infinity,
                   height: Get.height * 0.2,
                   child: TextField(
-                    onChanged: (String isiChat) {
+                    onChanged: (String isiChat) { 
                       controller.getPertanyaan(isiChat);
                     },
                     maxLines: 30,
@@ -82,8 +82,14 @@ class PertanyaanView extends GetView<PertanyaanController> {
               //Mengambil gambar
 
               SizedBox(height: 10),
-              Center(
-                child: GetBuilder<PertanyaanController>(
+
+              
+
+              Center( 
+                
+                child: 
+                // controller.imageFile != null ? Image.file(controller.imageFile!) : Text("no image")
+                GetBuilder<PertanyaanController>(
                     builder: (controller) => controller.PickedImage != null
                         ? Galeri(controller)
                         :
@@ -102,7 +108,7 @@ class PertanyaanView extends GetView<PertanyaanController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                      onTap: () => controller.PickGaleri(),
+                      onTap: () => controller.PickGaleri (),
                       child: Container(
                         // margin: EdgeInsets.only(left: Get.width * 0.04),
                         width: Get.width * 0.2,
@@ -147,7 +153,7 @@ class PertanyaanView extends GetView<PertanyaanController> {
                   // margin: EdgeInsets.only(left: Get.width * 0.8,top: Get.height * 0.35),
                   child: GestureDetector(
                     onTap: () {
-                      controller.uploadfto();
+                      controller.uploadData();
                       // controller.uploadfto();
                       // controller.upload().then((foto) {
                       //   if (foto != null) {
@@ -172,13 +178,16 @@ class PertanyaanView extends GetView<PertanyaanController> {
 
   Stack Galeri(PertanyaanController controller) {
     return Stack(children: [
+      // controller.imageFile != null ? Image.file( controller.imageFile!) : Text("no image"),
+      
       Container(
         height: 300,
-        width: 300,
+        width: 300, 
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(200),
           image: DecorationImage(
             image: FileImage(File(controller.PickedImage!.path)),
+            // FileImage(File(controller.PickedImage!.path)),
             fit: BoxFit.cover,
           ),
         ),

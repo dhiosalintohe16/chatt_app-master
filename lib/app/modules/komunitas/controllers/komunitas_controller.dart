@@ -1,7 +1,6 @@
-import 'dart:math';
-
 
 import 'package:get/get.dart';
+
 
 
 class KomunitasController extends GetxController {
@@ -13,6 +12,7 @@ class KomunitasController extends GetxController {
   void onInit() {
     super.onInit();
   }
+  
 
   @override
   void onReady() {
@@ -23,7 +23,9 @@ class KomunitasController extends GetxController {
   void onClose() {}
   void increment() => count.value++;
 
-
+  // void movetoDetailContent(DocumentSnapshot data){
+  //   navigator!.push<void>(context,MaterialPageRoute<void>(builder: context) => DetailContentController(postData: data));
+  // }
 
   String readTimestamp(int timestamp) {
     var now = DateTime.now();
@@ -49,7 +51,7 @@ class KomunitasController extends GetxController {
         time = 'now';
       }
     } else if (diff.inDays > 0 && diff.inDays < 7) {
-      time = diff.inDays.toString() + 'd';
+      time = diff.inDays.toString() + 'd ago';
     } else if (diff.inDays > 6) {
       time = (diff.inDays / 7).floor().toString() + 'w';
     } else if (diff.inDays > 29) {
@@ -60,36 +62,16 @@ class KomunitasController extends GetxController {
     return time;
   }
 
-  
+  static String commentWithoutReplyUser(String commentString){
+    List<String> splitCommentString = commentString.split(' ');
+    int commentUserNameLength = splitCommentString[0].length;
+    String returnText = commentString.substring(commentUserNameLength,commentString.length);
+    return returnText;
+  }
 
   
 
-// void delete(){
-//     DocumentReference documentReference = FirebaseFirestore.instance.collection("Chats").doc();
 
-//     documentReference.delete().whenComplete(() {
-//       print("Berhasil dihapus");
-//     });
-//   }
 
 }
 
-// class ComunityData {
-//   late final String Username;
-//   late final String userprofil;
-//   late final int postdate;
-//   late final String postcontent;
-//   late final String postimage;
-//   late final int postlike;
-//   late final int postcoment;
-
-//   ComunityData({
-//     required this.Username,
-//     required this.userprofil,
-//     required this.postcoment,
-//     required this.postcontent,
-//     required this.postdate,
-//     required this.postimage,
-//     required this.postlike,
-//   });
-// }

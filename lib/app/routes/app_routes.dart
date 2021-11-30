@@ -20,6 +20,8 @@ abstract class Routes {
   static const CHAT_ROOM = _Paths.CHAT_ROOM;
   static const PERTANYAAN = _Paths.PERTANYAAN;
   static const COMUNITY = _Paths.COMUNITY;
+  static const UPLOAD = _Paths.UPLOAD;
+  static const DETAIL_CONTENT = _Paths.DETAIL_CONTENT;
 }
 
 abstract class _Paths {
@@ -39,4 +41,6 @@ abstract class _Paths {
   static const CHAT_ROOM = '/chat-room';
   static const PERTANYAAN = '/pertanyaan';
   static const COMUNITY = '/comunity';
+  static const UPLOAD = '/upload';
+  static const DETAIL_CONTENT = '/detail-content';
 }
