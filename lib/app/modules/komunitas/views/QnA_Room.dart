@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tierra_app/app/controllers/auth_controller.dart';
 import 'package:tierra_app/app/modules/komunitas/controllers/komunitas_controller.dart';
-import 'package:tierra_app/app/modules/komunitas/views/cekKomen.dart';
 import 'package:tierra_app/app/modules/pertanyaan/controllers/pertanyaan_controller.dart';
 
 class QnARoom extends StatefulWidget {
@@ -17,34 +16,44 @@ class QnARoom extends StatefulWidget {
 
 class _QnARoom extends State<QnARoom> {
   final authC = Get.find<AuthController>();
-  String? _replyUserID;
-  String? _replyCommentID;
+  late String _replyuser;
+  // String? _replyUserID;
+  // String? _replyCommentID;
   
   FocusNode _writingTextFocus = FocusNode();
   final TextEditingController _msgTextController = new TextEditingController();
   @override
 
-void initState() {
+  void _replykomen (String replyTo) async {
+    _replyuser=replyTo;
+      FocusScope.of(context).requestFocus(FocusNode());
+      _msgTextController.text = '';
+      
+    } 
     
-    _msgTextController.addListener(_msgTextControllerListener);
-    super.initState();
-  }
 
-  void _msgTextControllerListener(){
-    if(_msgTextController.text.length == 0 || _msgTextController.text.split(" ")[0] != _replyUserID) {
-      _replyUserID = null;
-      _replyCommentID = null;
-   
-    }
-  }
+  
+// void initState() {
+    
+//     _msgTextController.addListener(_msgTextControllerListener);
+//     super.initState();
+//   }
 
-void _replyComment(List<String> commentData) async{//String replyTo,String replyCommentID,String replyUserToken) async {
-    _replyUserID = commentData[0];
-    _replyCommentID = commentData[1];
+//   void _msgTextControllerListener(){
+//     if(_msgTextController.text.length == 0 || _msgTextController.text.split(" ")[0] != _replyUserID) {
+//       _replyUserID = null;
+//       _replyCommentID = null;
    
-    FocusScope.of(context).requestFocus(_writingTextFocus);
-    _msgTextController.text = '${commentData[0]} ';
-  }
+//     }
+//   }
+
+// void _replyComment(List<String> commentData) async{//String replyTo,String replyCommentID,String replyUserToken) async {
+//     _replyUserID = commentData[0];
+//     _replyCommentID = commentData[1];
+   
+//     FocusScope.of(context).requestFocus(_writingTextFocus);
+//     _msgTextController.text = '${commentData[0]} ';
+//   }
 
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -170,11 +179,12 @@ void _replyComment(List<String> commentData) async{//String replyTo,String reply
                             primary: false,
                               shrinkWrap: true,
                               children: snapshot.data!.docs.map((document) {
-                                return CommentItem(data: document, size: size, replyComment: _replyComment);}).toList(),
+                                
+                                // return CommentItem(data: document, size: size, replyComment: _replyComment);}).toList(),
                             
                             
-                                // _CommentListItem(document, size);
-                              // }).toList(),
+                                return _CommentListItem(document, size);
+                              }).toList(),
                             )
                           : Container(),
                     ],
@@ -232,6 +242,7 @@ void _replyComment(List<String> commentData) async{//String replyTo,String reply
                   icon: new Icon(Icons.send),
                   onPressed: () {
                     _handleSubmitted(_msgTextController.text);
+                    print(_msgTextController);
                   }),
               ),
             ],
@@ -327,12 +338,18 @@ void _replyComment(List<String> commentData) async{//String replyTo,String reply
                               ),
                             ],
                           ),
-                          Text(
-                            'Reply',
-                            style: GoogleFonts.averageSans(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[700],
+                          GestureDetector(
+                            onTap: (){
+                              _replykomen(data['']);
+                              print('komen masuk ');
+                            },
+                            child: Text(
+                              'Reply',
+                              style: GoogleFonts.averageSans(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey[700],
+                              ),
                             ),
                           ),
                         ],
@@ -355,17 +372,18 @@ void _replyComment(List<String> commentData) async{//String replyTo,String reply
   Future<void> _handleSubmitted(String text) async {
     try {
       await PertanyaanController()
-          .commentToPost(_replyUserID == null ? widget.postData['nama'] : _replyUserID,
-                         _replyCommentID == null ? widget.postData['commentID']:_replyCommentID,
-                         widget.postData['postID'],
-                         _msgTextController);
+          .commentToPost(widget.postData['nama'],widget.postData['postID'],_msgTextController.text
+            
+            // _replyUserID == null ? widget.postData['nama'] : _replyUserID,
+            //              _replyCommentID == null ? widget.postData['commentID']:_replyCommentID,
+            //              widget.postData['postID'],
+            //              _msgTextController
+          
+          );
         await PertanyaanController().jumlhCommnet(widget.postData);
       FocusScope.of(context).requestFocus(FocusNode());
       _msgTextController.text = '';
-      // await FBCloudStore.commentToPost(_replyUserID == null ? widget.postData['userName'] : _replyUserID,_replyCommentID == null ? widget.postData['commentID'] : _replyCommentID,widget.postData['postID'], _msgTextController.text, widget.myData,_replyUserID == null ? widget.postData['FCMToken'] : _replyUserFCMToken);
-      // await FBCloudStore.updatePostCommentCount(widget.postData);
-      // FocusScope.of(context).requestFocus(FocusNode());
-      // _msgTextController.text = '';
+      
     } catch (err) {
       print(err);
     }
