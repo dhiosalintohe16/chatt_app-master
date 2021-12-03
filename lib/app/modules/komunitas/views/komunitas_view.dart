@@ -51,124 +51,126 @@ class KomunitasView extends GetView<KomunitasController> {
               borderRadius: BorderRadius.circular(20),
               border: Border.all(color: Color(0xFF008269)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Obx(() => ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: 
-                              Container(height: 60,width: 60,
-                                child: Image.network(
-                                  authC.user.value.photoUrl!,
-                                  fit: BoxFit.cover,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Obx(() => ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: 
+                                Container(height: 60,width: 60,
+                                  child: Image.network(
+                                    authC.user.value.photoUrl!,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                            ))),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          data["nama"],
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 17),
-                        ),
-                        Text(controller.readTimestamp(data["lasttime"]),
+                              ))),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            data["nama"],
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 17),
+                          ),
+                          Text(controller.readTimestamp(data["lasttime"]),
+                            
+                            style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 15,
+                              color: Colors.black87,
+                            ),
+                          )
+                        ],
+                      ), ],
+                  ),
+            
+                      // SizedBox(
+                      //   height: 25,
+                      // ),
+            
+                      Center(
+                        
+                        child: data['postImage'] != 'NONE' ? 
+                         ClipRRect(
+                          borderRadius: BorderRadius.circular(12),                        
                           
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 15,
-                            color: Colors.black87,
+                          child:                          
+                          
+                          // PertanyaanController().PickedImage != null ?
+                        
+                          
+                          Image.network(data['postImage'],
+                              // child: Image.network(
+                              //     documentSnapshot["image"],
+                              width: double.infinity,height: 150,
+                              fit: BoxFit.fitWidth,)
+                              // :SizedBox(height: 10,)
+                        ): Container(),
+                      ),
+                  SizedBox(height: 10,),
+                  GestureDetector(
+                    onTap: () => _movetoDeailcontent(data),
+                    child: Text(
+                            data["isiChat"],
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 17),
+                          ),),
+                  
+            
+                          SizedBox(height:8),
+            
+                         
+            
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                             Row(
+                        children: [
+                          GestureDetector(
+                            onTap: ()=>_updateLikeCount(data),
+                            child: Icon(
+                              Icons.favorite_border,
+                              color: Colors.black,
+                            ),
                           ),
-                        )
-                      ],
-                    ), ],
-                ),
-
-                    // SizedBox(
-                    //   height: 25,
-                    // ),
-
-                    Center(
-                      
-                      child: data['postImage'] != 'NONE' ? 
-                       ClipRRect(
-                        borderRadius: BorderRadius.circular(12),                        
-                        
-                        child:                          
-                        
-                        // PertanyaanController().PickedImage != null ?
-                      
-                        
-                        Image.network(data['postImage'],
-                            // child: Image.network(
-                            //     documentSnapshot["image"],
-                            width: double.infinity,height: 150,
-                            fit: BoxFit.fitWidth,)
-                            // :SizedBox(height: 10,)
-                      ): Container(),
-                    ),
-                SizedBox(height: 10,),
-                GestureDetector(
-                  onTap: () => _movetoDeailcontent(data),
-                  child: Text(
-                          data["isiChat"],
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 17),
-                        ),),
-                
-
-                        SizedBox(height:8),
-
-                       
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                           Row(
-                      children: [
-                        GestureDetector(
-                          onTap: ()=>_updateLikeCount(data),
-                          child: Icon(
-                            Icons.favorite_border,
-                            color: Colors.black,
-                          ),
-                        ),
-                        data['postlike'] != 0 ?
-                        Text(
-                          '${data['postlike']}',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ):Container(),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Row(
-                      children: [IconButton(onPressed: () => _movetoDeailcontent(data), icon: Icon(Icons.message_outlined)),
-                        // Icon(
-                        //   Icons.message_outlined,
-                        //   color: Colors.black,
-                        // ),
-                        data['postcomment'] != 0 ?
-                        Text(
-                          '${data['postcomment']}',
-                          // '${data.postcoment}',
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
-                        ):Container(),
-                      ],
-                    ) 
-                          ],
-                        )
+                          data['postlike'] != 0 ?
+                          Text(
+                            '${data['postlike']}',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w500),
+                          ):Container(),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Row(
+                        children: [IconButton(onPressed: () => _movetoDeailcontent(data), icon: Icon(Icons.message_outlined)),
+                          // Icon(
+                          //   Icons.message_outlined,
+                          //   color: Colors.black,
+                          // ),
+                          data['postcomment'] != 0 ?
+                          Text(
+                            '${data['postcomment']}',
+                            // '${data.postcoment}',
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w500),
+                          ):Container(),
+                        ],
+                      ) 
+                            ],
+                          )
+                   
+                  
                  
-                
-               
-              ],
+                ],
+              ),
             ),
             // ],
           )),

@@ -12,7 +12,7 @@ import 'package:tierra_app/app/controllers/auth_controller.dart';
 
 class PertanyaanController extends GetxController {
   late ImagePicker imagePicker;
-  late String isiChat, postImageURL;
+  late String isiChat, postImageURL,reply;
   final authC = Get.find<AuthController>();
   static const chars =
       'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
@@ -75,12 +75,16 @@ class PertanyaanController extends GetxController {
     postData.reference.update({'postlike':FieldValue.increment(1)});
   }
 
-  Future<void> commentToPost(String toUserID, toCommentID, postID,commentContent) async {
+Future<void> replycommnet() async{
+
+}
+
+  Future<void> commentToPost(String toUserID,postID,commentContent) async {
     String commentID = getRandomString(8) + Random().nextInt(500).toString();
-    FirebaseFirestore.instance.collection('komunitas').doc(postID).collection('comment').doc().set({
+    FirebaseFirestore.instance.collection('komunitas').doc(postID).collection('comment').doc(commentID).set({
       'toUserID': toUserID,
       'commentID' : commentID,
-      'toCommentID' : toCommentID,
+      'postID':postID,
       'nama': authC.user.value.name,
       'fotoprofil' : authC.user.value.photoUrl,
       'isiComment': commentContent,
@@ -88,8 +92,10 @@ class PertanyaanController extends GetxController {
       'commnetlike': 0,
    
       
-    });
+    }
+    );
   }
+
   Future<void> likeToPost(String postID) async {
     FirebaseFirestore.instance.collection('komunitas').doc(postID).collection('like').doc(authC.user.value.name,).set({
       

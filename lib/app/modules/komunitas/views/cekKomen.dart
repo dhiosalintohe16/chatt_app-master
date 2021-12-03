@@ -38,7 +38,7 @@ class _CommentItem extends State<CommentItem>{
                 child: Container(
                     width: widget.data['toCommentID'] == null ? 48 : 40,
                     height: widget.data['toCommentID'] == null ? 48 : 40,
-                    child: Image.asset('images/${widget.data['userThumbnail']}')
+                    child: Image.asset('images/${widget.data['fotoprofil']}')
                 ),
               ),
               Column(
@@ -52,11 +52,13 @@ class _CommentItem extends State<CommentItem>{
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(4.0),
-                            child: Text(widget.data['userName'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                            child: Text(widget.data['nama'],style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left:4.0),
-                            child: widget.data['toCommentID'] == null ? Text(widget.data['commentContent'],maxLines: null,) :
+                            child: 
+                            widget.data['toCommentID'] == null ? 
+                            Text(widget.data['commentContent'],maxLines: null,) :
                             RichText(
                               text: TextSpan(
                                 children: <TextSpan>[
