@@ -59,7 +59,7 @@ class KomunitasView extends GetView<KomunitasController> {
                     children: [
                       Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Obx(() => ClipRRect(
+                          child:  ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: 
                                 Container(height: 60,width: 60,
@@ -68,7 +68,7 @@ class KomunitasView extends GetView<KomunitasController> {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                              ))),
+                              )),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
