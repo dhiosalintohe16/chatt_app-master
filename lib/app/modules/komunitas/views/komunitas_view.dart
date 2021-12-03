@@ -64,7 +64,7 @@ class KomunitasView extends GetView<KomunitasController> {
                                 child: 
                                 Container(height: 60,width: 60,
                                   child: Image.network(
-                                    authC.user.value.photoUrl!,
+                                    data['fotoprofil'],
                                     fit: BoxFit.cover,
                                   ),
                                 ),

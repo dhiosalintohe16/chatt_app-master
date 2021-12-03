@@ -36,11 +36,11 @@ class PertanyaanView extends GetView<PertanyaanController> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Container(
-          //   padding: EdgeInsets.fromLTRB(Get.width * 0.04, Get.height * 0.04,
-          //       Get.width * 0.05, Get.height * 0.03),
-          //   child: Column(
-          //     children: [
+          Container(
+            padding: EdgeInsets.fromLTRB(Get.width * 0.04, Get.height * 0.04,
+                Get.width * 0.05, Get.height * 0.03),
+            child: Column(
+              children: [
           Text(
             "Pertanyaan Anda",
             textAlign: TextAlign.start,
@@ -75,13 +75,13 @@ class PertanyaanView extends GetView<PertanyaanController> {
                         borderSide: BorderSide(
                             color: Color(0xFF008269), width: 1))),
               )),
-
-          //Mengambil gambar
-
-          SizedBox(height: 10),
-
           
-
+          //Mengambil gambar
+          
+          SizedBox(height: 10),
+          
+          
+          
           Center( 
             
             child: 
@@ -96,11 +96,11 @@ class PertanyaanView extends GetView<PertanyaanController> {
                     // ),
                     Text("Tambahkan Gambar Ke postingan anda")),
           ),
-
+          
           SizedBox(
             height: 10,
           ),
-
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -111,7 +111,7 @@ class PertanyaanView extends GetView<PertanyaanController> {
                     width: Get.width * 0.2,
                     height: Get.width * 0.2,
                     color: Colors.red[100],
-
+          
                     child: Column(children: [
                       IconButton(
                           onPressed: () {},
@@ -140,9 +140,9 @@ class PertanyaanView extends GetView<PertanyaanController> {
               )
             ],
           ),
-
+          
           Spacer(),
-
+          
           Container(
               margin: EdgeInsets.only(
                   bottom: Get.height * 0.06, right: Get.width * 0.04),
@@ -168,9 +168,9 @@ class PertanyaanView extends GetView<PertanyaanController> {
                   ),
                 ),
               ))
-        ],
-      ),
-    );
+                ],
+              ),
+            )]));
   }
 
   Stack Galeri(PertanyaanController controller) {
