@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tierra_app/app/controllers/auth_controller.dart';
@@ -90,10 +91,16 @@ class _QnARoom extends State<QnARoom> {
                 SizedBox(
                   width: 5,
                 ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: NetworkImage(authC.user.value.photoUrl!),
-                )
+                ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: 
+                                Container(height: 60,width: 60,
+                                  child: Image.network(
+                                    widget.postData['fotoprofil'],
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
               ],
             ),
           ),
